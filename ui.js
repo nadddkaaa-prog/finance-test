@@ -1,5 +1,4 @@
-// ui.js
-// Pastikan XLSX sudah dimuat dari CDN di index.html sebelum app.js
+
 const XLSX = window.XLSX || null;
 
 import { Income, Outcome } from './finance.js';
@@ -81,7 +80,7 @@ export class UI {
       e.target.value = ''; // reset input
     });
 
-    // Hapus item income
+   
     this.incomeListEl.addEventListener('click', (e) => {
       const li = e.target.closest('li[data-id]');
       if (!li) return;
@@ -92,7 +91,6 @@ export class UI {
       }
     });
 
-    // Hapus item outcome
     this.outcomeListEl.addEventListener('click', (e) => {
       const li = e.target.closest('li[data-id]');
       if (!li) return;
@@ -104,7 +102,7 @@ export class UI {
     });
   }
 
-  // 🔹 Ekspor ke Excel
+
   exportToExcel() {
     if (!XLSX) {
       alert('Library XLSX belum termuat. Pastikan koneksi internet aktif.');
